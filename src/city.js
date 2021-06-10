@@ -1,10 +1,12 @@
 import React from 'react';
 
 
-function city(props){
+function City(props){
     return(
         <div>
-            <h1>Hello city</h1>
+            <h1>{props.city.LocationText}</h1>
         </div>
     )
 }
+
+export default City;
