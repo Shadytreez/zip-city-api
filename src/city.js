@@ -3,7 +3,7 @@ import './App.css';
 
 function City(props){
     return(
-        <div className="content">
+        <div className="box">
             <h1>{props.city.LocationText}</h1>
             <ul>
                 <li>State: {props.city.State}</li>
