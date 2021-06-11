@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import City from "./city"
-
+import './App.css';
 class App extends Component{
   
     
@@ -42,7 +42,7 @@ class App extends Component{
    
 
     return (
-    <div>
+    <div className="content">
       <h1>Zip Code Search</h1>
       <form id ="form">
          <p>Zip Code </p> <input id="zipcode" placeholder="12345" type="text"/>

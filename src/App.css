@@ -1,6 +1,6 @@
-.App {
-  height: 100vh;
+body {
   background: rgb(95,167,190);
+  background-size: cover;
   }
   
   
@@ -11,4 +11,10 @@
     width: 300px;
     background: white;
     border-radius: 30px;
+  }
+  .content {
+    max-width: 500px;
+    margin: auto;
+    background-size: cover;
+    background: rgb(95,167,190);
   }

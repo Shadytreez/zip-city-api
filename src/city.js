@@ -1,9 +1,9 @@
 import React from 'react';
-
+import './App.css';
 
 function City(props){
     return(
-        <div id="box">
+        <div className="content">
             <h1>{props.city.LocationText}</h1>
             <ul>
                 <li>State: {props.city.State}</li>
