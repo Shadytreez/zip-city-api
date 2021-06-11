@@ -3,6 +3,7 @@ import React from 'react';
 
 function City(props){
     return(
+        //get the data from state.cities
         <div id="box">
             <h1>{props.city.LocationText}</h1>
             <ul>
