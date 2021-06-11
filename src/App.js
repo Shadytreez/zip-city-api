@@ -13,23 +13,32 @@ class App extends Component{
   getCities = () =>
   { const zipCode = document.getElementById("zipcode").value;
     const url = "http://ctp-zip-api.herokuapp.com/zip/"+zipCode;
-    fetch(url).
-    then(response => response.json()).
-    then(responseJson => {
-      console.log(responseJson);
-      this.setState({cities: responseJson});
-    }).
-    then(city => {
-      for(let i in this.state.cities)
-      {
-        console.log(i);
-        var joined = this.state.v.concat(<City city={this.state.cities[i]}/>);
-        console.log(joined);
-        this.setState({ v: joined });
-        console.log(this.state.v[i]);
-        console.log(this.state.cities[i]);
-      } 
-    });
+
+    if(zipCode.length === 5)
+    {
+      fetch(url).
+      then(response => response.json()).
+      then(responseJson => {
+        console.log(responseJson);
+        this.setState({cities: responseJson});
+      }).
+      then(city => {
+        for(let i in this.state.cities)
+        {
+          console.log(i);
+          var joined = this.state.v.concat(<City city={this.state.cities[i]}/>);
+          console.log(joined);
+          this.setState({ v: joined });
+          console.log(this.state.v[i]);
+          console.log(this.state.cities[i]);
+        } 
+      }).catch((error) => {
+        alert("not a valid zip code");
+      });
+    }else{
+      alert("zip code should be 5 numbers");
+    }
+   
     
     
   }
