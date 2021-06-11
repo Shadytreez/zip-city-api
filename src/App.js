@@ -21,7 +21,7 @@ class App extends Component{
     }).
     then(error => console.log("error:"));
     
-    
+    this.getCityComponents();
   }
 
   getCityComponents = () =>
@@ -49,9 +49,8 @@ class App extends Component{
       <form id ="form">
          <p>Zip Code </p> <input id="zipcode" placeholder="12345" type="text"/>
          <button type ="button" onClick={this.getCities}> Submit</button>
-         <button type ="button" onClick={this.getCityComponents}> sdsds</button>
        </form>
-        {this.state.v}
+        {this.state.v[1]}
        
     </div>)
   }
