@@ -19,23 +19,21 @@ class App extends Component{
       console.log(responseJson);
       this.setState({cities: responseJson});
     }).
-    then(error => console.log("error:"));
+    then(city => {
+      for(let i in this.state.cities)
+      {
+        console.log(i);
+        var joined = this.state.v.concat(<City city={this.state.cities[i]}/>);
+        console.log(joined);
+        this.setState({ v: joined });
+        console.log(this.state.v[i]);
+        console.log(this.state.cities[i]);
+      } 
+    });
     
-    this.getCityComponents();
+    
   }
 
-  getCityComponents = () =>
-  {
-    
-     for(let i in this.state.cities)
-     {
-       console.log(i);
-       var joined = this.state.v.concat(<City city={this.state.cities[i]}/>);
-       this.setState({ v: joined });
-       console.log(this.state.v[i]);
-       console.log(this.state.cities[i]);
-     }  
-  } 
   
 
   
@@ -50,7 +48,7 @@ class App extends Component{
          <p>Zip Code </p> <input id="zipcode" placeholder="12345" type="text"/>
          <button type ="button" onClick={this.getCities}> Submit</button>
        </form>
-        {this.state.v[1]}
+        {this.state.v}
        
     </div>)
   }
