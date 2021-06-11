@@ -3,7 +3,7 @@ import React from 'react';
 
 function City(props){
     return(
-        <div>
+        <div id="box">
             <h1>{props.city.LocationText}</h1>
             <ul>
                 <li>State: {props.city.State}</li>
